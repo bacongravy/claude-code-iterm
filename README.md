@@ -15,11 +15,20 @@ A Claude Code plugin for automating iTerm2 terminal operations on macOS.
 
 ## Installation
 
+### From Marketplace (Recommended)
+
 ```bash
-/plugin install /path/to/claude-code-iterm
+/plugin marketplace add https://github.com/bacongravy/claude-code-marketplace
+/plugin install iterm@bacongravy
 ```
 
-Or for development:
+### From Repository
+
+```bash
+/plugin install https://github.com/bacongravy/claude-code-iterm
+```
+
+### For Development
 
 ```bash
 claude --plugin-dir /path/to/claude-code-iterm

@@ -1,0 +1,20 @@
+{
+  "name": "iterm",
+  "version": "1.0.0",
+  "description": "iTerm2 terminal automation commands for Claude Code - manage panes, tabs, windows, profiles, and layouts",
+  "author": {
+    "name": "David Kramer"
+  },
+  "license": "MIT",
+  "keywords": [
+    "iterm",
+    "iterm2",
+    "terminal",
+    "macos",
+    "applescript",
+    "automation",
+    "pane",
+    "tab",
+    "window"
+  ]
+}

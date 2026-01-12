@@ -27,11 +27,16 @@ Create, close, navigate between, or rename iTerm2 tabs.
 
 ## AppleScript Reference
 
+**Important**: The `create tab` command returns a reference to the new tab. Capture this reference to write commands to the new tab's session.
+
 ```applescript
--- Create new tab
+-- Create new tab and cd to directory
 tell application "iTerm2"
   tell current window
-    create tab with default profile
+    set newTab to (create tab with default profile)
+  end tell
+  tell current session of newTab
+    write text "cd /path/to/directory"
   end tell
 end tell
 

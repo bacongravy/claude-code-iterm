@@ -119,8 +119,24 @@ tell application "iTerm2"
 end tell
 ```
 
+## Navigate All Panes to Directory
+
+After creating a layout, use this pattern to cd all panes to the current directory:
+
+```applescript
+tell application "iTerm2"
+  tell current tab of current window
+    repeat with aSession in sessions
+      tell aSession
+        write text "cd /path/to/directory"
+      end tell
+    end repeat
+  end tell
+end tell
+```
+
 ## Notes
 
 - Layouts start from the current pane and create new panes relative to it
-- All new panes inherit the current working directory by default
+- New panes do NOT automatically inherit the working directory - use the pattern above
 - Pane proportions can be adjusted manually after creation

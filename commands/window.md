@@ -24,15 +24,23 @@ Create, close, or manage iTerm2 windows.
 
 ## AppleScript Reference
 
+**Important**: The `create window` command returns a reference to the new window. Capture this reference to write commands to the new window's session.
+
 ```applescript
--- Create new window with default profile
+-- Create new window and cd to directory
 tell application "iTerm2"
-  create window with default profile
+  set newWindow to (create window with default profile)
+  tell current session of current tab of newWindow
+    write text "cd /path/to/directory"
+  end tell
 end tell
 
--- Create new window with specific profile
+-- Create new window with specific profile and cd
 tell application "iTerm2"
-  create window with profile "ProfileName"
+  set newWindow to (create window with profile "ProfileName")
+  tell current session of current tab of newWindow
+    write text "cd /path/to/directory"
+  end tell
 end tell
 
 -- Close current window

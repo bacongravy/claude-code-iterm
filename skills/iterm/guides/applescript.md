@@ -70,6 +70,8 @@ end tell
 
 ### Split Pane
 
+The `split` command returns a reference to the newly created session. **Always capture this reference** if you need to send commands to the new pane.
+
 ```applescript
 -- Vertical split (new pane to the right)
 tell current session of current tab of current window
@@ -84,6 +86,14 @@ end tell
 -- Split with specific profile
 tell current session of current tab of current window
   split vertically with profile "Development"
+end tell
+
+-- Split and run command in new pane (RECOMMENDED)
+tell current session of current tab of current window
+  set newSession to (split vertically with default profile)
+end tell
+tell newSession
+  write text "cd /path && npm start"
 end tell
 ```
 
